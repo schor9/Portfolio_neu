@@ -1,3 +1,5 @@
+<?php?>
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -6,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Romina Schöpfer</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 <body>
@@ -19,9 +22,9 @@
         </a>
         <div class="navbar-links">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Über Mich</a></li>
+                <li><a href="#l11">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#about">Über Mich</a></li>
                 <li><a href="#">Kontakt</a></li>
             </ul>
         </div>
@@ -38,10 +41,25 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
       <script src="javascript.js"></script>
 
-    <section>
+      <section class="about">
+        <div class="wrapper">
+          <div class="container">
+              <h2>ÜBER MICH</h2>
+              <div class="skills"></div>
+              <img src="titelbild.jpg" alt="Titelbild Romina">
+              
+
+              <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+              <script>
+                AOS.init();
+              </script>
+        
+    </section>  
+
+    <section class="skills">
         <div class="wrapper">
             <div class="container">
-                <h2>Skills</h2>
+                <h2>SKILLS</h2>
                 <div class="skills">
                     <div class="details">
                       <span>HTML</span>
@@ -80,17 +98,41 @@
             </div>
         </div>
     </section>
-
-    <section>
-        <div>
-            <h2>Über Mich</h2>
-
+      <div class="wrapper">
+            <div class="container">
+                <h2>KONTAKT</h2>
+                <div class="skills">
+                  <form action="">
+                  </div>
+                    <div class="half">
+                    <div class="item">
+          <label for="name">NAME</label>
+          <input type="text" id="name">
         </div>
+        <div class="half">
+          <div class="item">
+            <label for="email">EMAIL</label>
+            <input type="text" id="email">
+          </div>
+          <div class="half">
+            <div class="item">
+              <label for="message">NACHRICHT</label>
+              <textarea name="" id="message" cols="30" rows="10"></textarea>
+            </div>
+            <div class="action">
+              <input type="submit" name="" id="NACHRICHT SENDEN">
+              <input type="RESET" name="" id="zURÜCKSETZTEN">
+            </div>
+            <div class="icons">
+              <a href="" class="GITHUB">GitHub</a>
+            </div>  
+          </div>
+    </form>
+
     </section>
-    <section>
-        <div>
-            <h2>Kontakt</h2>
-        </div>
-    </section>
+    <footer>
+
+    </footer>
+
 
    
