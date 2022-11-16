@@ -2,13 +2,14 @@
 
 html{
   scroll-behavior: smooth;
+  color: #6FBFBF;
+  background-color: #010326;
 }
 * {
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
-  background-color: #010326;
-  color: #6FBFBF;
   text-align: center;
+
   
 }
 
@@ -34,86 +35,175 @@ h2{
 img {
   max-width: 100%;
   height: auto;
+  border-radius: 20px;
 }
 nav{
-  position: sticky;
-  z-index: 1;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: 0;
   display: flex;
-  gap: 2em;
-  margin-left: 3em;
-  margin-top: 2em;
+  height: 100px;
+  background-color: #010326;
 }
+
 
 /*Navbar*/
-
-
+nav .logo {
+	float: left;
+	width: 40%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	font-size: 24px;
+	color: #6FBFBF;
+}
+nav .links {
+	float: right;
+	padding: 0;
+	margin: 0;
+	width: 60%;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+nav .links li {
+	list-style: none;
+}
+nav .links a {
+	display: block;
+	padding: 0.75em;
+	font-size: 16px;
+	font-weight: bold;
+	color: #6FBFBF;
+	text-decoration: none;
+  border-radius: 20px;
+  background-color: #393E59;
+}
+#nav-toggle {
+	position: absolute;
+	top: -100px;
+}
+nav .icon-burger {
+	display: none;
+	position: absolute;
+	right: 5%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+nav .icon-burger .line {
+	width: 30px;
+	height: 5px;
+	background-color: #6FBFBF;
+	margin: 5px;
+	border-radius: 3px;
+	transition: all .3s ease-in-out;
+}
+@media screen and (max-width: 768px) {
+	nav .logo {
+		float: none;
+		width: auto;
+		justify-content: center;
+	}
+	nav .links {
+		float: none;
+		position: fixed;
+		z-index: 9;
+		left: 0;
+		right: 0;
+		top: 100px;
+		bottom: 100%;
+		width: auto;
+		height: auto;
+		flex-direction: column;
+		justify-content: space-evenly;
+		
+		overflow: hidden;
+		box-sizing: border-box;
+		transition: all .5s ease-in-out;
+	}
+	nav .links a {
+		font-size: 20px;
+	}
+	nav :checked ~ .links {
+		bottom: 0;
+	}
+	nav .icon-burger {
+		display: block;
+	}
+	nav :checked ~ .icon-burger .line:nth-child(1) {
+		transform: translateY(10px) rotate(225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(3) {
+		transform: translateY(-10px) rotate(-225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(2) {
+		opacity: 0;
+	}
+	
+}
 /*Titel*/
-.ml11 {
-  font-weight: 700;
-  font-size: 6em;
-  
+.ml9 {
+  position: relative;
+  font-weight: 200;
+  font-size: 4em;
 }
 
-.ml11 .text-wrapper {
+.ml9 .text-wrapper {
   position: relative;
   display: inline-block;
-  padding-top: 0.1em;
+  padding-top: 1.5em;
   padding-right: 0.05em;
-  padding-bottom: 0.15em;
-
+  padding-bottom: 0.1em;
+  overflow: hidden;
 }
 
-.ml11 .line {
-  opacity: 0;
-  position: absolute;
-  left: 0;
-  height: 100%;
-  width: 3px;
-  background-color: #fff;
-  transform-origin: 0 50%;
-}
-
-.ml11 .line1 { 
-  top: 0; 
-  left: 0;
-}
-
-.ml11 .letter {
+.ml9 .letter {
+  transform-origin: 50% 100%;
   display: inline-block;
   line-height: 1em;
 }
 
-@media (max-width: 950px) {
-  .ml11 {
-      font-size: 40px;
-      
-  }
+@media screen and (max-width: 610px) {
+.ml9{
+  width: auto;
+  justify-content: center;
+  font-size: 30px;
+  padding-top: 3em;
+}
 }
 
-
 /*Skills*/
-
 .wrapper{
   position: center;
   display: flex;
+  justify-content: center;
   margin-left: 5px;
   margin-right: 5px;
+
   
 }
+section {
+  scroll-margin: 7em;
+}
+
 .container{
-  width: 100%;
-  padding: 30px 30px 50px;
+  width: 95vw;
   background-color: #393E59;
   border-radius: 10px;
   position: center;
-  margin: 3em 2em;
-
+  margin-top: 3em;
+  margin-bottom: 3em;
 } 
+
 
 .container *{
   font-weight: 500;
-  background-color: #393E59;
+
   position: center;
+  border-radius: 10px;
 
 }
 
@@ -141,12 +231,13 @@ nav{
   margin-bottom: 30px;
 }
 
+
 #html-bar{
   animation: html-fill 2s forwards;
 }
-@keyframes html-fill{
+@keyframes html-fill{ 
   100%{
-      width: 60%;
+      width: 80%;
   }
 }
 
@@ -177,122 +268,231 @@ nav{
   }
 }
 
+#python-bar{
+  animation: python-fill 2s forwards;
+}
+@keyframes python-fill{
+  100%{
+      width: 60%;
+  }
+}
+
 /*Ueber Mich*/
-/* Timeline Container */
+/* The actual timeline (the vertical ruler) */
+.foto {
+  width: 40vw;
+}
+
 .timeline {
-  background: var(--primary-color);
-  margin: 20px auto;
-  padding: 20px;
-}
-
-/* Card container */
-.card {
   position: relative;
-  max-width: 400px;
+  max-width: 1200px;
+  margin: 0 auto;
+  
 }
 
-/* setting padding based on even or odd */
-.card:nth-child(odd) {
-  padding: 30px 0 30px 30px;
-}
-.card:nth-child(even) {
-  padding: 30px 30px 30px 0;
-}
-/* Global ::before */
-.card::before {
-  content: "";
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
   position: absolute;
-  width: 50%;
-  border: solid orangered;
-}
-
-/* Setting the border of top, bottom, left */
-.card:nth-child(odd)::before {
-  left: 0px;
-  top: -4.5px;
-  bottom: -4.5px;
-  border-width: 5px 0 5px 5px;
-  border-radius: 50px 0 0 50px;
-}
-
-/* Setting the border of top, bottom, right */
-.card:nth-child(even)::before {
-  right: 0;
+  width: 6px;
+  background-color: #010326;
   top: 0;
   bottom: 0;
-  border-width: 5px 5px 5px 0;
-  border-radius: 0 50px 50px 0;
+  left: 50%;
+  margin-left: -3px;
+  
 }
 
-/* Removing the border if it is the first card */
-.card:first-child::before {
-  border-top: 0;
-  border-top-left-radius: 0;
-}
-
-/* Removing the border if it is the last card  and it's odd */
-.card:last-child:nth-child(odd)::before {
-  border-bottom: 0;
-  border-bottom-left-radius: 0;
-}
-
-/* Removing the border if it is the last card  and it's even */
-.card:last-child:nth-child(even)::before {
-  border-bottom: 0;
-  border-bottom-right-radius: 0;
-}
-
-/* Information about the timeline */
-.info {
-  display: flex;
-  flex-direction: column;
-  background: #333;
-  color: gray;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-/* Title of the card */
-.title {
-  color: orangered;
+/* Container around content */
+.time {
+  padding: 10px 40px;
   position: relative;
+  background-color: inherit;
+  width: 50%;
+  margin-bottom: 30px;
+  
 }
 
-/* Timeline dot  */
-.title::before {
-  content: "";
+/* The circles on the timeline */
+.time::after {
+  content: '';
   position: absolute;
-  width: 10px;
-  height: 10px;
-  background: white;
-  border-radius: 999px;
-  border: 3px solid orangered;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: #6FBFBF;
+  border: 4px solid #010326;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
 }
 
-/* text right if the card is even  */
-.card:nth-child(even) > .info > .title {
-  text-align: right;
+/* Place the container to the left */
+.left {
+  left: 0;
 }
 
-/* setting dot to the left if the card is odd */
-.card:nth-child(odd) > .info > .title::before {
-  left: -45px;
+/* Place the container to the right */
+.right {
+  left: 50%;
 }
 
-/* setting dot to the right if the card is odd */
-.card:nth-child(even) > .info > .title::before {
-  right: -45px;
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid #010326;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #010326;
 }
 
-/*Kontakt*/
-form .half{
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid #010326;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #010326 transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: #010326;
+  position: relative;
+  border-radius: 6px;
+}
+.content p{
+  background-color: #010326;
+  font-size: 18px;
+}
+.content h3{
+  background-color: #010326;
+  font-size: 30px;
+}
+.content h4{
+  background-color: #010326;
+  font-size: 23px;
+}
+.content li{
+  background-color: #010326;
+}
+.content ul{
+  background-color: #010326;
+}
+
+
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+/* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+
+/* Full-width containers */
+  .time {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+/* Make sure that all arrows are pointing leftwards */
+  .time::before {
+    left: 60px;
+    border: medium solid #010326;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #010326 transparent transparent;
+  }
+
+/* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+    left: 15px;
+  }
+
+/* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+
+
+/*Hobbies*/
+
+.hobbies {
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.gallery-wrap {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  height: 70vh;
+}
+.item {
+  flex: 1;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  transition: flex 0.8s ease;
+
+}
+.item:hover {
+  flex: 7;
+}
+.item-1 {
+  background-image: url('berge.jpg');
+}
+.item-2 {
+  background-image: url('freund.jpg');
+}
+.item-3 {
+  background-image: url('familie.jpg');
+}
+.item-4 {
+  background-image: url('winter.jpg');
+}
+.item-5 {
+  background-image: url('https://images.unsplash.com/photo-1486140525285-12e658d9ac0f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80');
+}
+.social {
+  position: absolute;
+  right: 35px;
+  bottom: 0;
+}
+.social img {
+  display: block;
+  width: 32px;
 }
 
-form .half .item{
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 24px;
-  width: 48%;
+
+
+
+
+
+/*Kontaktformular*/
+
+#map{
+  height: 50vh;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
+
+/*Footer */

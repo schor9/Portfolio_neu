@@ -1,5 +1,3 @@
-<?php?>
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -8,74 +6,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Romina Schöpfer</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
 
 </head>
 <body>
 <main>
   <nav>
-    <a href="#home"><span>HOME</span></a>
-    <a href="#about"><span>ÜBER MICH</span></a>
-    <a href="#skills"><span>SKILLS</span></a>
-    <a href="#kontakt"><span>KONTAKT</span></a>
+    <input id="nav-toggle" type="checkbox">
+    <div class="logo"></div>
+    <ul class="links">
+      <li><a href="#">HOME</a></li>
+      <li><a href="#intro">ÜBER MICH</a></li>
+      <li><a href="#skills">SKILLS</a></li>
+      <li><a href="#hobbies">HOBBIES</a></li>
+      <li><a href="#kontakt">KONTAKT</a></li>
+    </ul>
+    <label for="nav-toggle" class="icon-burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </label>
   </nav>
-  
-
-  <section id="home">
-    <h1 class="ml11">
-        <span class="text-wrapper">
-          <span class="line line1"></span>
-          <span class="letters">Romina Schöpfer</span>
-        </span>
-      </h1>
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-      <script src="javascript.js"></script>
-  </section>
-
-      <section id="about">
+  <!--Source: https://tobiasahlin.com/moving-letters/-->
+  <h1 class="ml9">
+    <span class="text-wrapper">
+      <span class="letters">ROMINA SCHÖPFER</span>
+    </span>
+  </h1>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <script src="javascript.js"></script>
+<!--Source: https://codepen.io/snookca/full/qYoLaq-->
+      <section id="intro">
         <div class="wrapper">
           <div class="container">
-              <h2>ÜBER MICH</h2>
-              <div class="skills"></div>
-              <img src="titelbild.jpg" alt="Titelbild Romina">
-              <div class="timeline">
-                <div class="outer">
-                  <div class="card">
-                    <div class="info">
-                      <h3 class="title">Title 1</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="info">
-                      <h3 class="title">Title 2</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="info">
-                      <h3 class="title">Title 3</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="info">
-                      <h3 class="title">Title 4</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="info">
-                      <h3 class="title">Title 5</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                    </div>
-                  </div>
+            <h2>ÜBER MICH</h2>
+            <img src="titelbild.jpg" alt="Titelbild" class="foto">
+            <div class="timeline">
+
+              <div class="time left">
+                <div class="content">
+                  <h3>2020-Heute</h3>
+                  <h4>Bachelor in Wirtschaftsinformatik</h4>
+                  <p>BFH</p>
+                </div>
+              </div>
+            
+              <div class="time right">
+                <div class="content">
+                  <h3>2018-2020</h3>
+                  <h4>Zugverkehrsleiterin</h4>
+                  <p>BLS AG</p>
                 </div>
               </div>
 
-    </section>  
+              <div class="time left">
+                <div class="content">
+                  <h3>2015-2018</h3>
+                  <h4>Lehre als Kauffrau mit BM</h4> 
+                  <p>Login Berufsbildung AG</p>
+                </div>
+              </div>
 
+                          
+              <div class="time right">
+                <div class="content">
+                  <h3>2012-2015</h3>
+                  <h4>Orientierungsschule</h4>
+                  <p>OS Tafers</p>
+                </div>
+              </div>
+
+              <div class="time left">
+                <div class="content">
+                  <h3>2006-2012</h3>
+                  <h4>Primarschule St. Antoni</h4>
+                </div>
+              </div>
+            
+            </div>
+
+          </div>
+        </div>    
+
+    </section>  
+<!--Source: https://dev.to/shantanu_jana/animated-skills-bar-html-and-css-1fbl-->
     <section id="skills">
         <div class="wrapper">
             <div class="container">
@@ -83,7 +99,6 @@
                 <div class="skills">
                     <div class="details">
                       <span>HTML</span>
-                      <span>60%</span>
                     </div>
                     <div class="bar">
                        <div id="html-bar"></div>
@@ -92,7 +107,6 @@
                   <div class="skills">
                     <div class="details">
                       <span>CSS</span>
-                      <span>75%</span>
                     </div>
                     <div class="bar">
                        <div id="css-bar"></div>
@@ -101,7 +115,6 @@
                   <div class="skills">
                     <div class="details">
                       <span>JavaScript</span>
-                      <span>50%</span>
                     </div>
                     <div class="bar">
                        <div id="javascript-bar"></div>
@@ -109,52 +122,109 @@
                   </div> <div class="skills">
                     <div class="details">
                       <span>Angular</span>
-                      <span>75%</span>
                     </div>
                     <div class="bar">
                        <div id="angular-bar"></div>
                     </div>
                   </div>  
+                  <div class="skills">
+                    <div class="details">
+                      <span>Python</span>
+                    </div>
+                    <div class="bar">
+                       <div id="python-bar"></div>
+                      </div>
+                    </div>
+                  </div>
             </div>
         </div>
     </section>
+    <section id="hobbies">
+      <div class="wrapper">
+        <div class="container">
+          <h2>FREIZEIT</h2>
+          <div class="hobbies">
+          
+            <div class="gallery-wrap">
+              <div class="item item-1"></div>
+              <div class="item item-2"></div>
+              <div class="item item-3"></div>
+              <div class="item item-4"></div>
+              <div class="item item-5"></div>
+            </div>
+           </div>
+            
+            
+        </div>
+      </div>
+    </section>
+    
     <section id="kontakt">
       <div class="wrapper">
-            <div class="container">
-                <h2>KONTAKT</h2>
-                <div class="skills">
-                  <form action="">
-                  </div>
-                    <div class="half">
-                    <div class="item">
-          <label for="name">NAME</label>
-          <input type="text" id="name">
+        <div class="container">
+            <h2>KONTAKT</h2>
+              <form action="https://api.web3forms.com/submit" method="post">
+                <input type="hidden" name="access_key" value="8287b351-71a6-46eb-b3c8-b64a47c67e0e">                
+                <div class="form-group">
+                  <label for="name">NAME<span class="star">*</span></label>
+                  <input
+                    type="text"
+                    id="name"
+                    class="form-control"
+                    placeholder="DEIN NAME"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="subject"
+                    >BETREFF&nbsp;<span class="optional">(OPTIONAL)</span></label>
+                  <input
+                    type="text"
+                    id="subject"
+                    class="form-control"
+                    placeholder="DEIN BETREFF"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">EMAIL<span class="star">*</span></label>
+                  <input
+                    type="email"
+                    id="email"
+                    class="form-control"
+                    placeholder="DEINE EMAILADRESSE"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="message">NACHRICHT<span class="star">*</span></label>
+                  <textarea
+                    id="message"
+                    class="form-control"
+                    placeholder="DEINE NACHRICHT"
+                    required
+                    cols="30"
+                    rows="10"
+                  ></textarea>
+                </div>
+                <button class="submit-btn">SENDEN</button>
+              </form>
+              <div class = "map-style"id="map"></div>
         </div>
-        <div class="half">
-          <div class="item">
-            <label for="email">EMAIL</label>
-            <input type="text" id="email">
-          </div>
-          <div class="half">
-            <div class="item">
-              <label for="message">NACHRICHT</label>
-              <textarea name="" id="message" cols="30" rows="10"></textarea>
-            </div>
-            <div class="action">
-              <input type="submit" name="" id="NACHRICHT SENDEN">
-              <input type="RESET" name="" id="zURÜCKSETZTEN">
-            </div>
-            <div class="icons">
-              <a href="" class="GITHUB">GitHub</a>
-            </div>  
-          </div>
-    </form>
-  </section>
-  </main>
+      </div>   
     </section>
+    <script src="javascript.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+      crossorigin=""></script>
+  </main>
     <footer>
-      <p>fjjf</p>
+      
+
+     
     </footer>
 
-
+    
    
