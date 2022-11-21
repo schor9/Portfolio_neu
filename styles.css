@@ -432,6 +432,8 @@ section {
 }
 
 
+
+
 /*Hobbies*/
 
 .hobbies {
@@ -488,7 +490,85 @@ section {
 
 
 /*Kontaktformular*/
+.form {
+  width: 90vw;
+  margin: 3rem auto;
+}
+.form__row {
+  display: flex;
+  justify-content: space-between;
 
+}
+@media (max-width: 40rem) {
+  .form__row {
+    flex-direction: column;
+ }
+}
+.form__row:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.form__group {
+  width: 49%;
+
+}
+@media (max-width: 40rem) {
+  .form__group {
+    width: 100%;
+ }
+}
+.form__input {
+  padding: 1.5rem 2rem;
+  border-radius: 10;
+  background-color: #010326;
+  color: #6FBFBF;
+  border: none;
+  width: 100%;
+  display: block;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  
+}
+.form__input:focus {
+  outline: none;
+  border-bottom: 3px solid #6FBFBF;
+}
+.form__input::-webkit-input-placeholder {
+  color: #6FBFBF;
+}
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+  transition: all 0.3s;
+}
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+.form__textarea {
+  padding: 1.5rem 2rem;
+  border-radius: 10;
+  background-color: #010326;
+  color: #6FBFBF;
+  border: none;
+  width: 100%;
+  display: block;
+  min-height: 18rem;
+}
+.form__textarea:focus {
+  outline: none;
+}
+button {
+  justify-content: center;
+  padding: 1.5rem 2rem;
+  border: none;
+  background-color: #6FBFBF;
+  color: #010326;
+  text-transform: uppercase;
+}
 #map{
   height: 50vh;
   margin-top: 30px;
@@ -496,3 +576,7 @@ section {
 }
 
 /*Footer */
+.passion{
+  width: 3.5vh;
+  border-radius: none;
+}

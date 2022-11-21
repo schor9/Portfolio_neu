@@ -163,55 +163,45 @@
       <div class="wrapper">
         <div class="container">
             <h2>KONTAKT</h2>
-              <form action="https://api.web3forms.com/submit" method="post">
+              <form action="https://api.web3forms.com/submit" method="post" class="form">
                 <input type="hidden" name="access_key" value="8287b351-71a6-46eb-b3c8-b64a47c67e0e">                
-                <div class="form-group">
-                  <label for="name">NAME<span class="star">*</span></label>
-                  <input
-                    type="text"
-                    id="name"
-                    class="form-control"
-                    placeholder="DEIN NAME"
-                    required
-                  />
+                <div class="contact">
+                  <div class="form-box">
+                      <div class="form__row">
+                        <div class="form__group">
+                          <input type="text" class="form__input" placeholder="Full Name" id="f-name" required>
+                          <label for="f-name" class="form__label">Full Name</label>
+                        </div>
+                        
+                        <div class="form__group">
+                          <input type="email" class="form__input" placeholder="Email" id="f-email" required>
+                          <label for="f-email" class="form__label">Email</label>
+                        </div>
+                      </div><!-- form-row -->
+                      <div class="form__row">         
+                        <div class="form__group">
+                          <input type="text" class="form__input" placeholder="Subject" id="f-subject" optional>
+                          <label for="f-subject" class="form__label">Subject</label>
+                        </div>
+                      </div><!-- form-row -->
+                      <div class="form__row">
+                     
+                          <textarea name="message" id="f-message" class="form__textarea"></textarea>
+                
+                      </div>
+                      <div class="form__row">
+                        <div class="form-group">
+                          <button class="btn btn--primary">
+                            Send Message
+                          </button>
+                        </div>
+                      </div>
+                    </form><!-- form -->
+                  </div><!-- form box -->
                 </div>
-                <div class="form-group">
-                  <label for="subject"
-                    >BETREFF&nbsp;<span class="optional">(OPTIONAL)</span></label>
-                  <input
-                    type="text"
-                    id="subject"
-                    class="form-control"
-                    placeholder="DEIN BETREFF"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="email">EMAIL<span class="star">*</span></label>
-                  <input
-                    type="email"
-                    id="email"
-                    class="form-control"
-                    placeholder="DEINE EMAILADRESSE"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="message">NACHRICHT<span class="star">*</span></label>
-                  <textarea
-                    id="message"
-                    class="form-control"
-                    placeholder="DEINE NACHRICHT"
-                    required
-                    cols="30"
-                    rows="10"
-                  ></textarea>
-                </div>
-                <button class="submit-btn">SENDEN</button>
-              </form>
-              <div class = "map-style"id="map"></div>
+                <div id="map"></div>   
         </div>
       </div>   
-    </section>
     <script src="javascript.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
       integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
@@ -219,12 +209,14 @@
     <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
       integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
       crossorigin=""></script>
+    </section>
+    
   </main>
-    <footer>
-      
-
-     
+    <footer class="footer"> 
+      <p>Made with<img class="passion" src="passionfruit.png" alt="Passion"> by Romina</p>
     </footer>
+
+
 
     
    
